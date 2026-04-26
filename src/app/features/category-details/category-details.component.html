@@ -1,0 +1,119 @@
+<div class="relative h-[300px] md:h-[400px] rounded-3xl overflow-hidden mb-8">
+
+  <!-- Background Image -->
+  <img [src]="category()?.image"
+       class="w-full h-full object-cover"
+       [alt]="category()?.name" />
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- Content -->
+  <div class="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4">
+
+    <h1 class="text-3xl md:text-5xl font-extrabold mb-3">
+      {{ category()?.name }}
+    </h1>
+
+    <p class="text-sm md:text-lg text-gray-200 max-w-xl">
+      Discover the best products in {{ category()?.name }} category
+    </p>
+
+    <!-- Buttons -->
+    <div class="container flex gap-3 mt-5">
+
+      <button routerLink="/categories"
+        class="bg-white text-gray-800 px-5 py-2 rounded-full font-medium hover:bg-gray-200 transition">
+        All Categories
+      </button>
+
+      <button routerLink="/"
+        class="border border-white px-5 py-2 rounded-full hover:bg-white hover:text-black transition">
+        Home
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="container flex items-center gap-2 text-sm text-gray-500 mb-6">
+
+  <a routerLink="/" class="hover:text-emerald-600 transition">Home</a>
+  <span>/</span>
+
+  <a routerLink="/categories" class="hover:text-emerald-600 transition">Categories</a>
+  <span>/</span>
+
+  <span class="text-gray-800 font-medium">
+    {{ category()?.name }}
+  </span>
+
+</div>
+
+
+
+
+<div class="bg-white shadow-md rounded-2xl p-6 flex items-center gap-5 mb-8">
+
+  <img [src]="category()?.image"
+       class="w-20 h-20 rounded-xl object-cover"
+       [alt]="category()?.name" />
+
+  <div>
+    <h2 class="text-xl font-bold text-gray-800">
+      {{ category()?.name }}
+    </h2>
+
+    <p class="text-gray-500 text-sm mt-1">
+      Browse all items under this category and explore subcategories.
+    </p>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+<div class="container mb-6">
+  <h2 class="text-2xl font-semibold mb-4">
+    Sub Categories
+  </h2>
+
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+
+    @for(sub of subCategories(); track sub._id) {
+
+   <div class="bg-white border border-gray-100 rounded-2xl py-5 px-3 text-center
+            hover:shadow-lg hover:-translate-y-1 transition-all duration-300 
+            cursor-pointer group flex flex-col items-center gap-2">
+
+  <!-- ICON -->
+  <div class="w-14 h-14 rounded-full bg-gray-100 
+              flex items-center justify-center
+              group-hover:bg-emerald-100 transition-all duration-300">
+
+    <i class="fas fa-cube text-gray-500 text-lg 
+              group-hover:text-emerald-600 transition"></i>
+
+  </div>
+
+  <!-- NAME -->
+  <h3 class="text-base font-semibold text-gray-800
+             group-hover:text-emerald-600 transition leading-tight">
+
+    {{ sub.name }}
+
+  </h3>
+
+</div>
+
+    }
+
+  </div>
+</div>

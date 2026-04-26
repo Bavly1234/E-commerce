@@ -1,0 +1,37 @@
+<section class="py-10">
+
+    <div class="container">
+        <h2 class="text-3xl font-semibold">Featured <span class="text-primary">products</span> </h2>
+
+        <div class="mt-5 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            @for(product of productList()  | paginate: { id: 'foo',
+                                                      itemsPerPage: pageSize(),
+                                                      currentPage: currentPage(),
+                                                      totalItems: total() }; track product.id){
+           
+           
+                <app-card [product]="product"></app-card>
+
+            
+            }
+        </div>
+
+
+        <pagination-controls  id="foo"
+                              (pageChange)="pageChanged($event)"
+
+                      [maxSize]="9"
+                      [directionLinks]="true"
+                      [autoHide]="true"
+                      [responsive]="true"
+                      previousLabel="Previous"
+                      nextLabel="Next"
+                      screenReaderPaginationLabel="Pagination"
+                      screenReaderPageLabel="page"
+                      screenReaderCurrentLabel="You're on page">
+</pagination-controls>
+    </div>
+
+
+
+</section>

@@ -1,0 +1,29 @@
+	.item {
+  background-image:
+    linear-gradient(to right, #00c758e6, #05df7280), url(/assets/home-slider-1.d79601a8.png);
+  background-size: cover;
+  background-position: center;
+}
+swiper-container::part(button-next),
+swiper-container::part(button-prev) {
+  color: var(--color-primary);
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  /* border: 1px solid #000; */
+  padding: 10px;
+    border-radius: 50%;
+}
+swiper-container::part(bullet) {
+  color: var(--color-primary);
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+}
+swiper-container::part(bullet-active) {
+transition: all 1s;
+  background-color: #fff;
+  width: 30px;
+  height: 15px;
+  border-radius: 5px;
+}

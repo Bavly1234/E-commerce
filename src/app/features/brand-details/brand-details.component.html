@@ -1,0 +1,65 @@
+<div class="bg-gradient-to-r from-emerald-600 to-emerald-800 text-white py-12 px-6 rounded-2xl mb-6">
+
+  <div class="max-w-5xl mx-auto text-center">
+
+    <h1 class="text-3xl md:text-5xl font-bold mb-3">
+       brandName
+    </h1>
+
+    <p class="text-emerald-100 text-sm md:text-lg">
+      Discover all products from this brand
+    </p>
+
+  </div>
+
+</div>
+
+<div class="container flex flex-wrap items-center gap-2 text-sm text-gray-500 mb-4">
+
+  <a routerLink="/" class="hover:text-emerald-600 transition">Home</a>
+  <span>/</span>
+
+  <a routerLink="/brands" class="hover:text-emerald-600 transition">Brands</a>
+  <span>/</span>
+
+  <span class="text-gray-800 font-medium"> brandName</span>
+
+</div>
+
+
+<div class="container flex items-center gap-3 flex-wrap mb-6">
+
+  <div class="flex items-center gap-2 bg-emerald-50 border border-emerald-200
+              text-emerald-700 px-4 py-2 rounded-full text-sm font-medium">
+
+    brandName 
+
+    <button
+      routerLink="/brands"
+      class="w-5 h-5 flex items-center justify-center rounded-full
+             hover:bg-emerald-200 transition">
+
+      <i class="fas fa-times text-xs"></i>
+
+    </button>
+  </div>
+
+</div>
+
+
+
+<!-- <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
+
+  @for(product of products(); track product.id) {
+
+    <app-card [product]="product"></app-card>
+
+  }
+
+</div>
+ -->
+
+
+
+
+

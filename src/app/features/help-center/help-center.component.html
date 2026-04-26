@@ -1,0 +1,130 @@
+<!-- HERO -->
+<div class="relative overflow-hidden bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-700 py-16 px-6 mb-10 rounded-3xl">
+
+  <div class="absolute -top-10 -left-10 w-40 h-40 bg-white/10 rounded-full blur-2xl animate-pulse"></div>
+  <div class="absolute bottom-0 right-0 w-52 h-52 bg-white/10 rounded-full blur-2xl animate-pulse"></div>
+
+  <div class="relative z-10 text-center text-white max-w-2xl mx-auto">
+
+    <h1 class="text-3xl md:text-5xl font-extrabold mb-4">
+      Help Center
+    </h1>
+
+    <p class="text-sm md:text-lg text-emerald-100 mb-6">
+      Find answers to your questions about orders, shipping, returns, and more.
+    </p>
+
+    <!-- Search -->
+    <div class="relative max-w-md mx-auto">
+      <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+      <input type="text" placeholder="Search for help..."
+        class="w-full pl-10 pr-4 py-3 rounded-full text-gray-700 outline-none shadow-md focus:ring-2 focus:ring-white" />
+    </div>
+
+  </div>
+</div>
+
+
+<!-- QUICK ACTIONS -->
+<div class="container grid sm:grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+
+  <div class="group bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition cursor-pointer text-center">
+    <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center rounded-xl bg-emerald-100 text-emerald-600 group-hover:bg-emerald-500 group-hover:text-white transition">
+      <i class="fas fa-box"></i>
+    </div>
+    <h3 class="font-semibold text-gray-800 group-hover:text-emerald-600">Orders</h3>
+    <p class="text-xs text-gray-500 mt-1">Track & manage orders</p>
+  </div>
+
+  <div class="group bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition cursor-pointer text-center">
+    <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center rounded-xl bg-blue-100 text-blue-600 group-hover:bg-blue-500 group-hover:text-white transition">
+      <i class="fas fa-truck"></i>
+    </div>
+    <h3 class="font-semibold text-gray-800 group-hover:text-blue-600">Shipping</h3>
+    <p class="text-xs text-gray-500 mt-1">Delivery & shipping info</p>
+  </div>
+
+  <div class="group bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition cursor-pointer text-center">
+    <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center rounded-xl bg-pink-100 text-pink-600 group-hover:bg-pink-500 group-hover:text-white transition">
+      <i class="fas fa-undo"></i>
+    </div>
+    <h3 class="font-semibold text-gray-800 group-hover:text-pink-600">Returns</h3>
+    <p class="text-xs text-gray-500 mt-1">Easy returns & refunds</p>
+  </div>
+
+  <div class="group bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition cursor-pointer text-center">
+    <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center rounded-xl bg-purple-100 text-purple-600 group-hover:bg-purple-500 group-hover:text-white transition">
+      <i class="fas fa-credit-card"></i>
+    </div>
+    <h3 class="font-semibold text-gray-800 group-hover:text-purple-600">Payments</h3>
+    <p class="text-xs text-gray-500 mt-1">Payment methods & issues</p>
+  </div>
+
+</div>
+
+
+<!-- FAQ SECTION -->
+<div class="container grid md:grid-cols-2 gap-6 mb-16">
+
+  <!-- FAQ ITEM -->
+  <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+    <h3 class="font-semibold text-gray-800 mb-2">
+      How can I track my order?
+    </h3>
+    <p class="text-sm text-gray-500">
+      You can track your order from your account dashboard under "My Orders".
+    </p>
+  </div>
+
+  <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+    <h3 class="font-semibold text-gray-800 mb-2">
+      What is your return policy?
+    </h3>
+    <p class="text-sm text-gray-500">
+      You can return products within 14 days of delivery if they are unused.
+    </p>
+  </div>
+
+  <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+    <h3 class="font-semibold text-gray-800 mb-2">
+      How long does shipping take?
+    </h3>
+    <p class="text-sm text-gray-500">
+      Shipping usually takes between 2-5 business days depending on location.
+    </p>
+  </div>
+
+  <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+    <h3 class="font-semibold text-gray-800 mb-2">
+      What payment methods are accepted?
+    </h3>
+    <p class="text-sm text-gray-500">
+      We accept credit cards, debit cards, and cash on delivery.
+    </p>
+  </div>
+
+</div>
+
+
+<!-- CONTACT CTA -->
+<div class="container mb-20">
+
+  <div class="bg-gradient-to-r from-emerald-500 to-teal-600 text-white p-8 rounded-3xl text-center shadow-lg">
+
+    <h2 class="text-2xl md:text-3xl font-bold mb-3">
+      Still need help?
+    </h2>
+
+    <p class="text-sm md:text-base text-emerald-100 mb-6">
+      Our support team is here to help you anytime.
+    </p>
+
+    <a routerLink="/contact"
+      class="inline-flex items-center gap-2 bg-white text-emerald-600 px-6 py-2.5 rounded-full font-medium hover:bg-emerald-50 transition shadow">
+      Contact Support
+      <i class="fas fa-arrow-right"></i>
+    </a>
+
+  </div>
+
+</div>
