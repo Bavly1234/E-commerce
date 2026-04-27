@@ -1,1 +1,60 @@
-<p>categories works!</p>
+<div class="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100 py-12 px-4 md:px-10">
+
+  <div class="max-w-6xl mx-auto mb-12 text-center">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+      Explore Categories
+    </h1>
+    <p class="text-gray-500 mt-3 text-sm md:text-base">
+      Discover products organized by categories tailored for you
+    </p>
+  </div>
+
+  <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+    @for (cat of categories(); track cat._id) {
+
+      <div
+        class="group relative bg-white rounded-3xl border border-gray-100 shadow-sm
+               hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+
+        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition
+                    bg-gradient-to-br from-emerald-50/40 to-transparent"></div>
+
+        <div class="h-44 flex items-center justify-center bg-gradient-to-b from-gray-50 to-white overflow-hidden relative">
+
+          <img
+            [src]="cat.image"
+            class="h-28 object-contain transition-transform duration-500 group-hover:scale-110"
+          />
+
+          <span class="absolute top-3 right-3 text-[10px] bg-white/80 backdrop-blur px-2 py-1 rounded-full text-gray-600 border">
+            Category
+          </span>
+        </div>
+
+        <div class="p-5 text-center relative">
+
+          <h2 class="font-semibold text-gray-900 text-lg group-hover:text-emerald-600 transition">
+            {{ cat.name }}
+          </h2>
+
+          <p class="text-xs text-gray-400 mt-1">
+            Browse products in this category
+          </p>
+
+          <button
+            [routerLink]="['/categories', cat._id]"
+            class="mt-5 w-full py-2.5 rounded-xl bg-emerald-600 text-white text-sm font-medium
+                   hover:bg-emerald-700 shadow-sm hover:shadow-md transition-all
+                   active:scale-95">
+
+            View Products →
+          </button>
+
+        </div>
+      </div>
+
+    }
+
+  </div>
+</div>

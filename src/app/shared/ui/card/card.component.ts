@@ -1,6 +1,6 @@
 import { Component, inject, input, signal, effect, OnInit, PLATFORM_ID } from '@angular/core';
 import { product } from '../../../core/models/product.interface';
-import { RouterLink } from "@angular/router";
+import { RouterLink } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../../../core/auth/services/auth.service';
 import { CartService } from '../../../core/auth/services/cart.service';
@@ -13,7 +13,6 @@ import { NgClass, isPlatformBrowser } from '@angular/common';
   styleUrl: './card.component.css',
 })
 export class CardComponent implements OnInit {
-
   product = input.required<product>();
 
   private readonly cartService = inject(CartService);
@@ -28,7 +27,6 @@ export class CardComponent implements OnInit {
       const loved = this.isLoved();
       const productId = this.product().id;
 
-      // ✅ حماية SSR
       if (productId && isPlatformBrowser(this.platformId)) {
         this.saveWishlistState(productId, loved);
       }
@@ -93,7 +91,7 @@ export class CardComponent implements OnInit {
         this.toastr.success('Added to cart successfully!', 'Cart');
         this.cartService.cartCount.set(res.numOfCartItems);
       },
-      error: () => this.toastr.error('Failed to add to cart', 'Error')
+      error: () => this.toastr.error('Failed to add to cart', 'Error'),
     });
   }
 
@@ -104,7 +102,7 @@ export class CardComponent implements OnInit {
           this.isLoved.set(false);
           this.toastr.info('Removed from wishlist', 'Wishlist');
         },
-        error: () => this.toastr.error('Failed to remove from wishlist', 'Error')
+        error: () => this.toastr.error('Failed to remove from wishlist', 'Error'),
       });
     } else {
       this.cartService.addToWishlist(productId).subscribe({
@@ -112,7 +110,7 @@ export class CardComponent implements OnInit {
           this.isLoved.set(true);
           this.toastr.success('Added to wishlist!', 'Wishlist');
         },
-        error: () => this.toastr.error('Failed to add to wishlist', 'Error')
+        error: () => this.toastr.error('Failed to add to wishlist', 'Error'),
       });
     }
   }

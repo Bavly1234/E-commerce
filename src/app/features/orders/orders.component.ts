@@ -1,4 +1,3 @@
-
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { CartService } from '../../core/auth/services/cart.service';
 import { AuthService } from '../../core/auth/services/auth.service';
@@ -9,10 +8,9 @@ import { RouterLink } from '@angular/router';
   selector: 'app-orders',
   templateUrl: './orders.component.html',
   styleUrl: './orders.component.css',
-  imports: [NgClass, DatePipe, NgIf, RouterLink]
+  imports: [NgClass, DatePipe, NgIf, RouterLink],
 })
 export class OrdersComponent implements OnInit {
-
   private readonly cartService = inject(CartService);
   private readonly authService = inject(AuthService);
 
@@ -44,7 +42,7 @@ export class OrdersComponent implements OnInit {
         console.error('Error loading orders:', err);
         this.error.set('Failed to load orders. Please try again later.');
         this.isLoading.set(false);
-      }
+      },
     });
   }
 

@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { CartService } from '../../core/auth/services/cart.service';
-import { CardComponent } from "../../shared/ui/card/card.component";
+import { CardComponent } from '../../shared/ui/card/card.component';
 
 @Component({
   selector: 'app-wishlist',
@@ -8,42 +8,31 @@ import { CardComponent } from "../../shared/ui/card/card.component";
   templateUrl: './wishlist.component.html',
   styleUrl: './wishlist.component.css',
 })
-export class WishlistComponent implements OnInit{
+export class WishlistComponent implements OnInit {
+  private readonly cartService = inject(CartService);
 
-    private readonly cartService = inject(CartService);
   wishlist = signal<any[]>([]);
 
   ngOnInit(): void {
-this.getWishlist()
- }
+    this.getWishlist();
+  }
 
-
- getWishlist() {
+  getWishlist(): void {
     this.cartService.getWishlist().subscribe({
       next: (res) => {
-        // this.wishlist.set(res.data);
-        // this.isLoading.set(false);
-        console.log("Thw wishlist",res);
-              this.wishlist.set(res.data);
-
-        
+        this.wishlist.set(res.data);
       },
-      error: (err) => {
-        // console.log(err);
-        // this.isLoading.set(false);
-      }
+      error: () => {},
     });
   }
 
-removeItem(productId: string) {
-  this.cartService.removeFromWishlist(productId).subscribe({
-    next: () => {
-      this.wishlist.update(items =>
-        items.filter(p => p.id !== productId)
-      );
-    }
-  })
-    
-
-}
+  removeItem(productId: string): void {
+    this.cartService.removeFromWishlist(productId).subscribe({
+      next: () => {
+        this.wishlist.update((items) =>
+          items.filter((p) => p.id !== productId)
+        );
+      },
+    });
+  }
 }

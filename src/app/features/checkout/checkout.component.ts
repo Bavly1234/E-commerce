@@ -29,11 +29,7 @@ export class CheckoutComponent implements OnInit {
 
 
 
-  // ngOnInit(): void {
-  //   this.activatedRoute.params.subscribe(params => {
-  //     console.log(params['id']);
-  //   });
-  // }
+
   ngOnInit(): void {
   this.cartService.getLoggedUserCart().subscribe({
     next: (res) => {

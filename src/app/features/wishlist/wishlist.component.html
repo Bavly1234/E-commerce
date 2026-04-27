@@ -1,32 +1,30 @@
-<!-- HERO -->
 <div class="relative overflow-hidden bg-gradient-to-r from-pink-500 via-rose-500 to-red-600 py-16 px-6 mb-10 rounded-3xl">
 
-  <!-- animated background -->
   <div class="absolute -top-10 -left-10 w-40 h-40 bg-white/10 rounded-full blur-2xl animate-pulse"></div>
   <div class="absolute bottom-0 right-0 w-52 h-52 bg-white/10 rounded-full blur-2xl animate-pulse"></div>
 
   <div class="relative z-10 text-center text-white max-w-2xl mx-auto">
+
     <h1 class="text-3xl md:text-5xl font-extrabold mb-4 flex items-center justify-center gap-3">
       ❤️ My Wishlist
     </h1>
 
     <p class="text-sm md:text-lg text-pink-100">
-Your favorites, all in one place
+      Your favorites, all in one place
     </p>
 
-    <!-- Count -->
     <div class="mt-6 inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm text-sm">
       <i class="fas fa-heart"></i>
       <span>{{ wishlist().length }} Items</span>
     </div>
+
   </div>
 </div>
 
-<!-- CONTENT -->
 <div class="container pb-20">
 
-  <!-- EMPTY STATE -->
   @if(wishlist().length === 0) {
+
     <div class="flex flex-col items-center justify-center text-center py-24">
 
       <div class="w-24 h-24 flex items-center justify-center rounded-full bg-gray-100 mb-6">
@@ -48,10 +46,8 @@ Your favorites, all in one place
       </a>
 
     </div>
-  }
 
-  <!-- GRID -->
-  @else {
+  } @else {
 
     <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
 
@@ -59,7 +55,6 @@ Your favorites, all in one place
 
         <div class="relative group">
 
-          <!-- REMOVE BUTTON -->
           <button
             (click)="removeItem(product.id)"
             class="absolute top-3 left-3 z-20 w-9 h-9 bg-white rounded-full shadow-md
@@ -69,11 +64,8 @@ Your favorites, all in one place
             <i class="fas fa-times"></i>
           </button>
 
-          <!-- CARD WRAPPER (extra hover effect) -->
           <div class="transform transition duration-300 group-hover:scale-[1.03]">
-
             <app-card [product]="product"></app-card>
-
           </div>
 
         </div>

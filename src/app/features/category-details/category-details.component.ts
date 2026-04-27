@@ -11,21 +11,16 @@ import { Category } from '../cart/models/cart.interface';
   styleUrl: './category-details.component.css',
 })
 export class CategoryDetailsComponent implements OnInit {
-
-  // 🔥 inject
   private readonly route = inject(ActivatedRoute);
   private readonly categoriesService = inject(CategoriesService);
 
-  // 💎 state
   category = signal<Category | null>(null);
   subCategories = signal<any[]>([]);
   isLoading = signal<boolean>(true);
-
-  // 🎯 id
   categoryId = signal<string>('');
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe((params) => {
       const id = params.get('id')!;
 
       this.categoryId.set(id);
@@ -44,17 +39,14 @@ export class CategoryDetailsComponent implements OnInit {
       error: (err) => {
         console.log(err);
         this.isLoading.set(false);
-      }
+      },
     });
 
-    // 🔥 لو عندك API للـ subcategories
     this.categoriesService.getSubCategories(id).subscribe({
       next: (res) => {
-        console.log("The sub",res);
-        
+        console.log('The sub', res);
         this.subCategories.set(res.data);
-      }
+      },
     });
   }
-
 }
