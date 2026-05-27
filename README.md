@@ -1,59 +1,101 @@
-# Ecommerce
+# E-commerce Angular Store
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.3.
+A professional, server-side rendered Angular e-commerce storefront built with Angular 21, Tailwind CSS, Flowbite and FontAwesome. This repository contains the complete frontend and SSR configuration for a shopping platform with product browsing, categories, cart management, checkout flow, and authentication-ready routing.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- Angular 21 application with SSR support
+- Responsive product catalog and category pages
+- Cart and checkout workflows
+- Reusable layout components for navbar and footer
+- Toast notifications, loading spinner, and pagination
+- Tailwind CSS and Flowbite UI styling
+- FontAwesome icon integration
 
-```bash
-ng serve
-```
+## Built with
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Angular 21
+- Angular SSR
+- Tailwind CSS
+- Flowbite
+- ngx-spinner
+- ngx-toastr
+- Swiper
+- FontAwesome
 
-## Code scaffolding
+## Prerequisites
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Node.js 20.x or later
+- npm 10.x or later
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Setup
 
 ```bash
-ng test
+npm ci
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+## Local development
 
 ```bash
-ng e2e
+npm start
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Open `http://localhost:4200/` in your browser.
 
-## Additional Resources
+## Production preview
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm run preview
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+## SSR production server
+
+Build the application, then start the SSR server:
+
+```bash
+npm run build
+npm run serve:ssr
+```
+
+## Test
+
+Run the test suite:
+
+```bash
+npm test
+```
+
+Run tests once for CI:
+
+```bash
+npm run test:ci
+```
+
+## Formatting
+
+Format source files with Prettier:
+
+```bash
+npm run format
+```
+
+## Repository structure
+
+- `src/` — Angular application source code
+- `public/` — static assets
+- `dist/` — generated build output
+- `.github/workflows/ci.yml` — GitHub Actions CI pipeline
+
+## Contributing
+
+Contributions are welcome. Please fork the repo, create a feature branch, and open a pull request.
+
+## License
+
+This project is licensed under the MIT License.
